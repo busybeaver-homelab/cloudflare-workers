@@ -1,1 +1,6 @@
-# initial commit
+! Title: Supplemental Custom Filter List by BusyBeaver
+! Expires: 1 day (update frequency)
+! Description: Filter list for supplemental, custom filter items
+! Homepage: https://github.com/busybeaver/honelab-adblock
+! Last modified:
+! Version: 1.0.0
