@@ -31,7 +31,6 @@
 ||reddit.com^$removeheader=Set-Cookie
 ||farside.link^$removeheader=Set-Cookie
 ||medium.com^$removeheader=Set-Cookie
-$removeparam=/^(gclid|yclid|fbclid)=/
 ||duckduckgo.com^$cookie;maxAge=43200;sameSite=Strict
 ||search.brave.com^$cookie;maxAge=43200;sameSite=Strict
 ||google.de^$cookie;maxAge=43200;sameSite=Strict
