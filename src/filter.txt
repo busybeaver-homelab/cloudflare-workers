@@ -6,8 +6,6 @@
 /apple-app-site-association
 /.well-known/apple-app-site-association
 ||reddit.com^$cookie
-$removeparam=/utm_.*/
-$removeparam=campID
 ||facebook.com^$cookie
 ||twitter.com^$cookie
 ||instagram.com^$cookie
