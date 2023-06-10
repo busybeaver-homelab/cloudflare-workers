@@ -3,8 +3,11 @@
 ! Description: Filter list for supplemental, custom filter items
 ! Homepage: https://github.com/busybeaver/honelab-adblock
 
+! remove (top) banner suggesting to install the app
 /apple-app-site-association
 /.well-known/apple-app-site-association
+
+! override cookie settings of webpages
 ||reddit.com^$cookie
 ||facebook.com^$cookie
 ||twitter.com^$cookie
@@ -40,7 +43,11 @@ $removeparam=/^(gclid|yclid|fbclid)=/
 ||fb.com^$removeheader=Set-Cookie
 ||googleapis.com^$cookie;maxAge=43200;sameSite=Strict
 ||fb.com^$cookie
+
+! remove youtube shorts
 youtube.com###dismissible:has([href*="shorts"])
 youtube.com##ytd-grid-video-renderer:has([href*="shorts"])
+
+! remove flashing banners on leo.org
 dict.leo.org##[id^="adv"]
 dict.leo.org##[data-dz-ui^="adv"]
