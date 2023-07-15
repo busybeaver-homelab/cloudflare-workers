@@ -3,9 +3,11 @@
 ! Description: Filter list for supplemental, custom filter items
 ! Homepage: https://github.com/busybeaver/honelab-adblock
 
+!#if (adguard && adguard_app_ios)
 ! remove (top) banner suggesting to install the app
 /apple-app-site-association
 /.well-known/apple-app-site-association
+!#endif
 
 ! override cookie settings of webpages
 ||reddit.com^$cookie
