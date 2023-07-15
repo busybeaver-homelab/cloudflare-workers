@@ -14,6 +14,7 @@ on:
   # run weekly on Monday at 12:00
   schedule:
     - cron: '0 12 * * 1'
+  workflow_dispatch:
 
 # concurrency:
 #   # on main, we want all builds to complete even if commits/merging happens faster to make it easier to discover at which point
