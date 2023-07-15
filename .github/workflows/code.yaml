@@ -1,0 +1,58 @@
+name: "Code CI"
+
+on:
+  # run on pushes to main
+  push:
+    branches:
+      - main
+      - gh-readonly-queue/main/**
+    paths:
+      - "src/**/*.txt"
+  # run on pull requests that target the main branch
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "src/**/*.txt"
+  # run weekly on Monday at 12:00
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+concurrency:
+  # on main, we want all builds to complete even if commits/merging happens faster to make it easier to discover at which point
+  # something broke; else, we cancel "old" builds and run/(re)start the build with the latest changes
+  group: ${{ github.ref == 'refs/heads/main' && format('ci-main-{0}-{1}', github.workflow, github.sha) || format('ci-{0}-{1}', github.workflow, github.ref) }}
+
+jobs:
+  lint:
+    name: 'Lint Filters'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: '.'
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Git - Checkout
+        id: git_checkout
+        uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3
+
+      - name: Node - Setup
+        id: node_setup
+        uses: actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b # tag=v3
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: NPM - Install Dependencies
+        id: npm_install
+        run: npm ci --prefer-offline
+
+      - name: NPM - Run Lint
+        id: npm_run_lint
+        run: npm run lint
