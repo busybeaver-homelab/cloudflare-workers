@@ -1,0 +1,13 @@
+{
+  "name": "honelab-adblock",
+  "version": "1.0.0",
+  "description": "Shared AdGuard/AdBlock/uBlockOrigin Filter List",
+  "main": "src/filter.txt",
+  "private": true,
+  "scripts": {
+    "lint": "aglint"
+  },
+  "devDependencies": {
+    "@adguard/aglint": "1.0.11"
+  }
+}

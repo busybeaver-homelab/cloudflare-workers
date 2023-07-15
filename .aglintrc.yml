@@ -1,0 +1,4 @@
+root: true
+allowInlineConfig: true
+extends:
+  - aglint:recommended
