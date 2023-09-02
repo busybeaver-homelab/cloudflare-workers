@@ -8,6 +8,6 @@
     "lint": "aglint"
   },
   "devDependencies": {
-    "@adguard/aglint": "2.0.3"
+    "@adguard/aglint": "2.0.4"
   }
 }
