@@ -1,7 +1,7 @@
 ! Title: Supplemental Custom Filter List by busybeaver
 ! Expires: 1 day
 ! Description: Filter list for supplemental, custom filter items
-! Homepage: https://github.com/busybeaver/honelab-adblock
+! Homepage: https://github.com/busybeaver/homelab-adblock
 
 !#if (adguard && adguard_app_ios)
 ! remove (top) banner suggesting to install the app
