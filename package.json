@@ -10,7 +10,7 @@
     "format": "dprint fmt"
   },
   "dependencies": {
-    "basic-auth": "^2.0.1"
+    "basic-auth": "2.0.1"
   },
   "devDependencies": {
     "@adguard/aglint": "2.0.5",

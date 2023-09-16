@@ -48,7 +48,7 @@ jobs:
 
       - name: Bun - Setup
         id: bun_setup
-        uses: oven-sh/setup-bun@v1
+        uses: oven-sh/setup-bun@a1800f471a0bc25cddac36bb13e6f436ddf341d7 # v1
         with:
           bun-version: ${{ env.BUN_VERSION }}
 
