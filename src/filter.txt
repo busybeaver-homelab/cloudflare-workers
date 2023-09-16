@@ -20,9 +20,9 @@
 ||quora.com^$cookie
 ||farside.link^$cookie
 ||imdb.com^$cookie
-||google.com^$cookie;maxAge=43200;sameSite=Strict
-||linkedin.com^$cookie;maxAge=43200;sameSite=Strict
-||openstreetmap.org^$cookie;maxAge=43200;sameSite=Strict
+||google.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||linkedin.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||openstreetmap.org^$cookie=/.*/;maxAge=43200;sameSite=Strict
 ||imgur.com^$removeheader=Set-Cookie
 ||twitter.com^$removeheader=Set-Cookie
 ||quora.com^$removeheader=Set-Cookie
@@ -33,16 +33,16 @@
 ||reddit.com^$removeheader=Set-Cookie
 ||farside.link^$removeheader=Set-Cookie
 ||medium.com^$removeheader=Set-Cookie
-||duckduckgo.com^$cookie;maxAge=43200;sameSite=Strict
-||search.brave.com^$cookie;maxAge=43200;sameSite=Strict
-||google.de^$cookie;maxAge=43200;sameSite=Strict
-||youtube.com^$cookie;maxAge=43200;sameSite=Strict
-||gstatic.com^$cookie;maxAge=43200;sameSite=Strict
-||amazon.de^$cookie;maxAge=43200;sameSite=Strict
-||amazon.com^$cookie;maxAge=43200;sameSite=Strict
-||ytimg.com^$cookie;maxAge=43200;sameSite=Strict
+||duckduckgo.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||search.brave.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||google.de^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||youtube.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||gstatic.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||amazon.de^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||amazon.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
+||ytimg.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
 ||fb.com^$removeheader=Set-Cookie
-||googleapis.com^$cookie;maxAge=43200;sameSite=Strict
+||googleapis.com^$cookie=/.*/;maxAge=43200;sameSite=Strict
 ||fb.com^$cookie
 
 ! remove youtube shorts
