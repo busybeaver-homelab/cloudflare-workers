@@ -1,6 +1,6 @@
 set shell := ["bash", "-uc"]
 
-additional_tools := ""
+additional_tools := "bun"
 
 # lists all available commands
 @default:
@@ -16,11 +16,18 @@ _run_shared cmd *args:
 
 # install all required tooling for development (osx only)
 install:
+  if [[ "{{os()}}" != "macos" ]]; then
+    echo "This command currently only works on macOS. On other systems, please install the following tools manually: {{default_tools}} {{additional_tools}}"
+    exit -1
+  fi
+
+  brew tap oven-sh/bun
   @just _run_shared install {{additional_tools}}
 
 # uninstall all required tooling for development (osx only)
 uninstall:
   @just _run_shared uninstall {{additional_tools}}
+  brew untap oven-sh/bun
 
 # initializes the tooling for working with this repository
 initialize:
@@ -41,13 +48,3 @@ commit *args:
 # runs the CI workflows locally; the optional args parameter allows to add additional optional arguments
 ci *args:
   @just _run_shared ci {{args}}
-
-# -----------------------
-# repo specific tooling:
-# -----------------------
-
-docker_compose_up *args:
-  docker compose up
-
-docker_compose_down *args:
-  docker compose donw

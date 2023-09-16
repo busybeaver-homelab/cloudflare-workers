@@ -1,0 +1,3 @@
+[install.lockfile]
+# until https://github.com/renovatebot/renovate/issues/20065 is resolved
+print = "yarn"

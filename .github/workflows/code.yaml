@@ -26,7 +26,7 @@ concurrency:
 
 jobs:
   lint:
-    name: 'Lint Filters'
+    name: 'Lint'
     runs-on: ubuntu-latest
 
     defaults:
@@ -37,22 +37,26 @@ jobs:
     permissions:
       contents: read
 
+    env:
+      # disabled-for-now renovate: datasource=github-releases depName=oven-sh/bun
+      BUN_VERSION: 1.0.2
+
     steps:
       - name: Git - Checkout
         id: git_checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
 
-      - name: Node - Setup
-        id: node_setup
-        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+      - name: Bun - Setup
+        id: bun_setup
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version-file: '.nvmrc'
-          cache: 'npm'
+          bun-version: ${{ env.BUN_VERSION }}
 
-      - name: NPM - Install Dependencies
-        id: npm_install
-        run: npm ci --prefer-offline
+      - name: Bun - Install Dependencies
+        id: bun_install
+        run: bun install --frozen-lockfile
 
-      - name: NPM - Run Lint
-        id: npm_run_lint
-        run: npm run lint
+      - name: Bun - Lint Filters
+        id: bun_run_lint
+        run: bun run lint
+
