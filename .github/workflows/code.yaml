@@ -54,7 +54,9 @@ jobs:
 
       - name: Bun - Install Dependencies
         id: bun_install
-        run: bun install --frozen-lockfile
+        # TODO: when renovate supports bun
+        # run: bun install --frozen-lockfile
+        run: bun install
 
       - name: Bun - Lint Filters
         id: bun_run_lint
