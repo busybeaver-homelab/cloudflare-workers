@@ -15,7 +15,7 @@
   "devDependencies": {
     "@adguard/aglint": "2.0.8",
     "@cloudflare/workers-types": "4.20240129.0",
-    "@types/basic-auth": "1.1.7",
+    "@types/basic-auth": "1.1.8",
     "bun-types": "1.0.25",
     "typescript": "5.3.3"
   }
