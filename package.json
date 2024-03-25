@@ -16,7 +16,7 @@
     "@adguard/aglint": "2.0.8",
     "@cloudflare/workers-types": "4.20240320.1",
     "@types/basic-auth": "1.1.8",
-    "bun-types": "1.0.34",
+    "bun-types": "1.0.35",
     "typescript": "5.4.3"
   }
 }
