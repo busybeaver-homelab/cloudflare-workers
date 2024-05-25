@@ -39,7 +39,7 @@ jobs:
 
     env:
       # disabled-for-now renovate: datasource=github-releases depName=oven-sh/bun
-      BUN_VERSION: 1.0.2
+      BUN_VERSION: 1.1.10
 
     steps:
       - name: Git - Checkout
